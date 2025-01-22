@@ -1,0 +1,57 @@
+﻿<Page x:Class="yp_gorlanov.TeachersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:yp_gorlanov"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="TeachersPage" Background="White">
+
+    <Grid>
+        <StackPanel Margin="0,20,20,620" HorizontalAlignment="Right" Width="421">
+            <TextBlock Text="проверочка" x:Name="profile_box" FontSize="24"/>
+        </StackPanel>
+
+        <StackPanel x:Name="SP_TypeOfTest" Orientation="Vertical" Margin="100, 200, 100, 350">
+            <TextBlock Text="Тип теста" Margin="0,0,0,10" FontSize="24"/>
+            <TextBox x:Name="TypeOfTest_TextBox" Margin="0,0,0,10" Height="35" VerticalAlignment="Center"/>
+            <Button x:Name="CreateTest_Btn" Content="Создать тест" Margin="0,0,0,10" Height="44"
+                    Click="CreateTest_Btn_Click" FontSize="24"/>
+        </StackPanel>
+
+        <StackPanel x:Name="SP_Test" Orientation="Vertical" Margin="200,100,200,100" Visibility="Collapsed">
+
+            <!--<ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10"/>-->
+
+            <TextBlock Text="Вопрос №1" FontSize="24"/>
+            <TextBox x:Name="Question1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Ответ №1" FontSize="24"/>
+            <TextBox x:Name="Answer1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Ответ №2" FontSize="24"/>
+            <TextBox x:Name="Answer2_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Ответ №3" FontSize="24"/>
+            <TextBox x:Name="Answer3_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Ответ №4" FontSize="24"/>
+            <TextBox x:Name="Answer4_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Правильный ответ" FontSize="24"/>
+            <TextBox x:Name="RightAnswer_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <Button Content="Сохранить" Margin="0,0,0,10"/>
+            <Button Content="Добавить еще вопрос" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="200,636,200,10" HorizontalAlignment="Center" >
+            <Button Content="Создать тест" Width="200" Margin="10" HorizontalAlignment="Left"/>
+            <Button Content="Все тесты" Width="200" Margin="10" HorizontalAlignment="Left"/>
+            <Button Content="Сведения о студентах" Width="200" Margin="10" HorizontalAlignment="Center"/>
+            <!--тут будет поиск по студенту, фильтрация оценок и тд-->
+            <Button Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right"/>
+        </StackPanel>
+    </Grid>
+</Page>

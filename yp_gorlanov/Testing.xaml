@@ -1,0 +1,36 @@
+﻿<Page x:Class="yp_gorlanov.Testing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:yp_gorlanov"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="testing" Background="White">
+
+    <Grid>
+        <StackPanel >
+            <TextBlock Text="Выберите тест"/>
+            <ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10"/>
+            <Button x:Name="StartTest" Height="100" />
+            
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical" Margin="200,100,200,100" Visibility="Collapsed">
+            <TextBlock x:Name="TypeOfTest_TextBlock" />
+
+            <TextBlock Text="Вопрос №1" FontSize="24"/>
+            <TextBox x:Name="Question1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <!--<TextBlock Text="Вопрос №2" FontSize="24"/>
+            <TextBox x:Name="Question2_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Вопрос №3" FontSize="24"/>
+            <TextBox x:Name="Question3_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Вопрос №4" FontSize="24"/>
+            <TextBox x:Name="Question4_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>-->
+        </StackPanel>
+        
+    </Grid>
+</Page>
