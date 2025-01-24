@@ -123,5 +123,22 @@ namespace yp_gorlanov.Profiles
 
 
         }
+
+        private void Role_Box_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedRole = Role_Box.SelectedItem as DB.roles;
+            if (selectedRole != null)
+            {
+                // Проверяем по ID или имени
+                if (selectedRole.role_id == 1 || selectedRole.role_name == "Преподаватель")
+                {
+                    StudentCard_Box.IsEnabled = false;
+                }
+                else
+                {
+                    StudentCard_Box.IsEnabled = true;
+                }
+            }
+        }
     }
 }

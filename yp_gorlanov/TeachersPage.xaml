@@ -13,7 +13,7 @@
             <TextBlock Text="проверочка" x:Name="profile_box" FontSize="24"/>
         </StackPanel>
 
-        <StackPanel x:Name="SP_TypeOfTest" Orientation="Vertical" Margin="100, 200, 100, 350">
+        <StackPanel x:Name="SP_TypeOfTest" Orientation="Vertical" Margin="100, 200, 100, 350" Visibility="Collapsed">
             <TextBlock Text="Тип теста" Margin="0,0,0,10" FontSize="24"/>
             <TextBox x:Name="TypeOfTest_TextBox" Margin="0,0,0,10" Height="35" VerticalAlignment="Center"/>
             <Button x:Name="CreateTest_Btn" Content="Создать тест" Margin="0,0,0,10" Height="44"
@@ -42,16 +42,20 @@
             <TextBlock Text="Правильный ответ" FontSize="24"/>
             <TextBox x:Name="RightAnswer_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
 
-            <Button Content="Сохранить" Margin="0,0,0,10"/>
-            <Button Content="Добавить еще вопрос" />
+            <Button Content="Сохранить" Margin="0,0,0,10" Background="Wheat"/>
+            <Button Content="Добавить еще вопрос" Background="Wheat"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="200,636,200,10" HorizontalAlignment="Center" >
-            <Button Content="Создать тест" Width="200" Margin="10" HorizontalAlignment="Left"/>
-            <Button Content="Все тесты" Width="200" Margin="10" HorizontalAlignment="Left"/>
-            <Button Content="Сведения о студентах" Width="200" Margin="10" HorizontalAlignment="Center"/>
+            <Button x:Name="CreateTestPage_Btn" Content="Создать тест" Width="200" Margin="10" HorizontalAlignment="Left" Background="Wheat" Click="CreateTestPage_Btn_Click"/>
+            <Button Content="Все тесты" Width="200" Margin="10" HorizontalAlignment="Left" Background="Wheat"/>
+            <Button x:Name="StudentsInfoPage_Btn" Content="Сведения о студентах" Width="200" Margin="10" HorizontalAlignment="Center" Background="Wheat" Click="StudentsInfoPage_Btn_Click"/>
             <!--тут будет поиск по студенту, фильтрация оценок и тд-->
-            <Button Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right"/>
+            <Button Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right" Background="Wheat"/>
+        </StackPanel>
+
+        <StackPanel x:Name="SP_StudentsInfo" Visibility="Collapsed" Margin="224,94,224,94">
+            <DataGrid x:Name="StudentsInfo_DG" AutoGenerateColumns="True"/>
         </StackPanel>
     </Grid>
 </Page>

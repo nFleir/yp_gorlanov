@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\profiles\\registration.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\profiles\\registration.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|c:\\users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\profiles\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\profiles\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\profiles\\autorization.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\profiles\\autorization.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\teacherspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\teacherspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\teacherspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\teacherspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\teacherspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\teacherspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,20 +38,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "TeachersPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml.cs",
               "RelativeDocumentMoniker": "yp_gorlanov\\TeachersPage.xaml.cs",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml.cs",
-              "RelativeToolTip": "yp_gorlanov\\TeachersPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml.cs*",
+              "RelativeToolTip": "yp_gorlanov\\TeachersPage.xaml.cs*",
+              "ViewState": "AgIAACAAAAAAAAAAAAAiwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-21T11:54:33.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "TeachersPage.xaml",
               "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml",
               "RelativeDocumentMoniker": "yp_gorlanov\\TeachersPage.xaml",
@@ -71,44 +59,6 @@
               "RelativeToolTip": "yp_gorlanov\\TeachersPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-01-21T11:53:57.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Autorization.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Autorization.xaml.cs",
-              "RelativeDocumentMoniker": "yp_gorlanov\\Profiles\\Autorization.xaml.cs",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Autorization.xaml.cs",
-              "RelativeToolTip": "yp_gorlanov\\Profiles\\Autorization.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAqwDQAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T14:28:25.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Registration.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "RelativeDocumentMoniker": "yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "RelativeToolTip": "yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAwGQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T10:38:23.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Registration.xaml",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Registration.xaml",
-              "RelativeDocumentMoniker": "yp_gorlanov\\Profiles\\Registration.xaml",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Registration.xaml",
-              "RelativeToolTip": "yp_gorlanov\\Profiles\\Registration.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-20T10:35:21.331Z",
               "EditorCaption": ""
             }
           ]

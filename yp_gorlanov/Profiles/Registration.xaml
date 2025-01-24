@@ -16,7 +16,7 @@
             <TextBox Name="Password_Box"  Margin="0,0,0,10" />
 
             <TextBlock Text="Роль" Margin="0,0,0,10" />
-            <ComboBox x:Name="Role_Box" Margin="0,0,0,10"/>
+            <ComboBox x:Name="Role_Box" Margin="0,0,0,10" SelectionChanged="Role_Box_SelectionChanged"/>
 
             <TextBlock Text="Фамилия" Margin="0,0,0,10" />
             <TextBox Name="Surname_Box"  Margin="0,0,0,10"/>
