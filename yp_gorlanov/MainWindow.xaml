@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yp_gorlanov"
         mc:Ignorable="d"
-        Title="Тестирование" Height="720" Width="1280">
+        Title="Тестирование" Height="720" Width="1280" ResizeMode="NoResize">
     <Grid>
         <TextBlock Text="Тестирование студентов" Margin="392,143,330,463" FontSize="48" />
         <Button Margin="411,246,350,326" x:Name="Autoriz_Btn" Content="Авторизация" FontSize="48" Click="Autoriz_Btn_Click" Background="White"/>

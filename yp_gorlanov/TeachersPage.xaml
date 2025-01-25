@@ -54,8 +54,11 @@
             <Button Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right" Background="Wheat"/>
         </StackPanel>
 
-        <StackPanel x:Name="SP_StudentsInfo" Visibility="Collapsed" Margin="224,94,224,94">
+        <StackPanel x:Name="SP_StudentsInfo" Visibility="Collapsed" Margin="224,94,224,207" Orientation="Vertical">
             <DataGrid x:Name="StudentsInfo_DG" AutoGenerateColumns="True"/>
+            <Button x:Name="UpdateSIDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" Click="UpdateSIDG_Btn_Click"/>
+            <Button x:Name="DeleteSIDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" Click="DeleteSIDG_Btn_Click"/>
+            
         </StackPanel>
     </Grid>
 </Page>

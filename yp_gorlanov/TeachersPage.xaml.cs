@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,6 +69,49 @@ namespace yp_gorlanov
             LoadDataGridData();
             SP_StudentsInfo.Visibility = Visibility.Visible;
             
+        }
+
+        private void UpdateSIDG_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (StudentsInfo_DG.SelectedItems.Count > 0)
+                {
+                    for (int i = 0; i < StudentsInfo_DG.SelectedItems.Count; i++)
+                    {
+                        DB.users user = StudentsInfo_DG.SelectedItems[i] as DB.users;
+                        if (user != null)
+                        {
+                            db.users.AddOrUpdate(user);
+
+                        }
+                    }
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
+        }
+
+        private void DeleteSIDG_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (StudentsInfo_DG.SelectedItems.Count>0)
+            {
+                for (int i = 0; i < StudentsInfo_DG.SelectedItems.Count; i++)
+                {
+                    DB.users user = StudentsInfo_DG.SelectedItems[i] as DB.users;
+                    if (user != null)
+                    {
+                        db.users.Remove(user);
+                    }
+                }
+                db.SaveChanges();
+            }
+
         }
     }
 }
