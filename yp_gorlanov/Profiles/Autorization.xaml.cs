@@ -34,22 +34,17 @@ namespace yp_gorlanov.Profiles
             string login = Login_Box.Text;
             string password = Password_Box.Password;
 
-            var findUser = db.users.FirstOrDefault(u => u.login == login);
-            if (findUser != null)
+            var findTeacher = db.teachers.FirstOrDefault(u => u.login == login);
+            if (findTeacher != null)
             {
-                if (findUser.password == password)
+                if (findTeacher.password == password)
                 {
 
                     MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK);
-                    CurrentUserID = findUser.user_id;
-                    if (findUser.role_id == 1)
-                    {
-                        AutorizFrame.Navigate(new TeachersPage(CurrentUserID));
-                    }
-                    else
-                    {
-                        AutorizFrame.Navigate(new Testing(CurrentUserID));
-                    }
+                    CurrentUserID = findTeacher.teacher_id;
+
+                    AutorizFrame.Navigate(new TeachersPage(CurrentUserID));
+
                     
                 }
                 else
@@ -59,14 +54,32 @@ namespace yp_gorlanov.Profiles
                     return;
                 }
             }
-            else
+
+
+            var findStudent = db.students.FirstOrDefault(u => u.login == login);
+            if (findStudent != null)
             {
-                MessageBox.Show($"Пользователь {login} не найден", "Авторизация", MessageBoxButton.OK);
-                Login_Box.Clear();
-                Password_Box.Clear();
-                return;
+                if (findStudent.password == password)
+                {
+
+                    MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK);
+                    CurrentUserID = findStudent.student_id;
+                    
+                    AutorizFrame.Navigate(new Testing(CurrentUserID));
+
+                }
+                else
+                {
+                    MessageBox.Show($"Пароли не совпадают", "Авторизация", MessageBoxButton.OK);
+                    Password_Box.Clear();
+                    return;
+                }
             }
 
+            MessageBox.Show($"Пользователь {login} не найден", "Авторизация", MessageBoxButton.OK);
+            Login_Box.Clear();
+            Password_Box.Clear();
+            return;
         }
     }
 }

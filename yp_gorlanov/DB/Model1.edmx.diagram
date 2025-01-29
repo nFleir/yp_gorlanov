@@ -4,18 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9b1117f4ae934aeab8d3138439a0b1b6" Name="Diagram1">
-        <EntityTypeShape EntityType="yp_gorlanovModel.users" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="yp_gorlanovModel.roles" Width="1.5" PointX="3.375" PointY="0.75" />
+      <Diagram DiagramId="9b1117f4ae934aeab8d3138439a0b1b6" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="yp_gorlanovModel.roles" Width="1.5" PointX="1.75" PointY="2.5" />
         <EntityTypeShape EntityType="yp_gorlanovModel.groups" Width="1.5" PointX="0.5" PointY="4.625" />
-        <EntityTypeShape EntityType="yp_gorlanovModel.answers" Width="1.5" PointX="5.875" PointY="6.625" />
+        <EntityTypeShape EntityType="yp_gorlanovModel.answers" Width="1.5" PointX="9.625" PointY="6.625" />
         <EntityTypeShape EntityType="yp_gorlanovModel.questions" Width="1.5" PointX="7.5" PointY="3.125" />
         <EntityTypeShape EntityType="yp_gorlanovModel.sysdiagrams" Width="1.5" PointX="12.125" PointY="1.5" />
-        <EntityTypeShape EntityType="yp_gorlanovModel.test" Width="1.5" PointX="3.875" PointY="5" />
+        <EntityTypeShape EntityType="yp_gorlanovModel.test" Width="1.5" PointX="3.75" PointY="6.375" />
         <AssociationConnector Association="yp_gorlanovModel.FK_answers_questions" />
-        <AssociationConnector Association="yp_gorlanovModel.FK_users_groups" />
         <AssociationConnector Association="yp_gorlanovModel.FK_questions_test" />
-        <AssociationConnector Association="yp_gorlanovModel.FK_users_roles" />
+        <EntityTypeShape EntityType="yp_gorlanovModel.teachers" Width="1.5" PointX="3.75" PointY="3.25" />
+        <AssociationConnector Association="yp_gorlanovModel.FK_teachers_roles" />
+        <EntityTypeShape EntityType="yp_gorlanovModel.marks" Width="1.5" PointX="6.375" PointY="6.75" />
+        <EntityTypeShape EntityType="yp_gorlanovModel.students" Width="1.5" PointX="5.375" PointY="0.5" />
+        <AssociationConnector Association="yp_gorlanovModel.FK_students_groups" />
+        <AssociationConnector Association="yp_gorlanovModel.FK_students_roles" />
+        <AssociationConnector Association="yp_gorlanovModel.FK_marks_students" />
+        <AssociationConnector Association="yp_gorlanovModel.FK_marks_test" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

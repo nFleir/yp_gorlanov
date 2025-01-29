@@ -25,7 +25,7 @@ namespace yp_gorlanov.Profiles
         private static Regex PassReg = new Regex(@"^[a-zA-Zа-яА-Я0-9]{8,}$");
 
         private DB.Entities db = new DB.Entities();
-
+        
         public Registration()
         {
             InitializeComponent();
@@ -59,7 +59,8 @@ namespace yp_gorlanov.Profiles
             string patronymic = Patronymic_Box.Text;
             int role = (int)Role_Box.SelectedValue;
             int group = (int)Role_Box.SelectedValue;
-
+            var selectedRole = Role_Box.SelectedItem as DB.roles;
+            string student_number = StudentCard_Box.Text;
 
             try
             {
@@ -73,11 +74,17 @@ namespace yp_gorlanov.Profiles
                     MessageBox.Show("Пароль должен содержать не менее 8 букв/цифр!", "Ошибка", MessageBoxButton.OK);
                     return;
                 }
-                if (db.users.Any(u => u.login == login))
+                if (db.teachers.Any(u => u.login == login))
                 {
                     MessageBox.Show("Такой пользователь уже есть!", "Ошибка", MessageBoxButton.OK);
                     return;
                 }
+                if (db.students.Any(u => u.login == login))
+                {
+                    MessageBox.Show("Такой пользователь уже есть!", "Ошибка", MessageBoxButton.OK);
+                    return;
+                }
+
 
                 if (Role_Box.SelectedItem == null)
                 {
@@ -91,26 +98,43 @@ namespace yp_gorlanov.Profiles
                     return;
                 }
 
-                if (!int.TryParse(StudentCard_Box.Text, out int student_number))
+
+
+
+                if (Role_Box.SelectedItem != null)
                 {
-                    MessageBox.Show("Студ.билет не содержит букв!", "Ошибка", MessageBoxButton.OK);
-                    return;
+                    if (selectedRole.role_id == 1 || selectedRole.role_name == "Преподаватель")
+                    {
+                        var teacher = new DB.teachers
+                        {
+                            login = login,
+                            password = password,
+                            role_id = role,
+                            name = name,
+                            surname = surname,
+                            patronymic = patronymic,
+
+                        };
+                        db.teachers.Add(teacher);
+                        db.SaveChanges();
+                    }
+                    else if (selectedRole.role_id == 2 ||  selectedRole.role_name == "Студент")
+                    {
+                        var student = new DB.students
+                        {
+                            login = login,
+                            password = password,
+                            role_id = role,
+                            name = name,
+                            surname = surname,
+                            patronymic = patronymic,
+                            group_number = group,
+                            student_card = student_number
+                        };
+                        db.students.Add(student);
+                        db.SaveChanges();
+                    }
                 }
-
-                var user = new DB.users
-                {
-                    login = login,
-                    password = password,
-                    role_id = role,
-                    name = name,
-                    surname = surname,
-                    patronymic = patronymic,
-                    group_number = group,
-                    student_card = student_number
-                };
-
-                db.users.Add(user);
-                db.SaveChanges();
 
                 MessageBox.Show("Вы зарегистрировались!", login, MessageBoxButton.OK);
                 RegFrame.Navigate(new Autorization());
@@ -137,6 +161,11 @@ namespace yp_gorlanov.Profiles
                 else
                 {
                     StudentCard_Box.IsEnabled = true;
+                    //if (!int.TryParse(StudentCard_Box.Text, out student_number))
+                    //{
+                    //    MessageBox.Show("Студ.билет не содержит букв!", "Ошибка", MessageBoxButton.OK);
+                    //    return;
+                    //}
                 }
             }
         }

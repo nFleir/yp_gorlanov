@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище yp_gorlanovModelContainer" CdmEntityContainer="Entities">
-    <EntitySetMapping Name="users">
-      <EntityTypeMapping TypeName="yp_gorlanovModel.users">
-        <MappingFragment StoreEntitySet="users">
-          <ScalarProperty Name="role_id" ColumnName="role_id" />
-          <ScalarProperty Name="user_id" ColumnName="user_id" />
-          <ScalarProperty Name="login" ColumnName="login" />
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="surname" ColumnName="surname" />
-          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
-          <ScalarProperty Name="student_card" ColumnName="student_card" />
-          <ScalarProperty Name="group_number" ColumnName="group_number" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="roles">
       <EntityTypeMapping TypeName="yp_gorlanovModel.roles">
         <MappingFragment StoreEntitySet="roles">
@@ -67,6 +52,68 @@
         <MappingFragment StoreEntitySet="test">
           <ScalarProperty Name="test_name" ColumnName="test_name" />
           <ScalarProperty Name="test_id" ColumnName="test_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teachers">
+      <EntityTypeMapping TypeName="yp_gorlanovModel.teachers">
+        <MappingFragment StoreEntitySet="teachers">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище yp_gorlanovModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище yp_gorlanovModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище yp_gorlanovModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище yp_gorlanovModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yp_gorlanovModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище yp_gorlanovModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yp_gorlanovModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище yp_gorlanovModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище yp_gorlanovModel.sp_upgraddiagrams" />
+    <EntitySetMapping Name="marks">
+      <EntityTypeMapping TypeName="yp_gorlanovModel.marks">
+        <MappingFragment StoreEntitySet="marks">
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="mark_id" ColumnName="mark_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="yp_gorlanovModel.students">
+        <MappingFragment StoreEntitySet="students">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="group_number" ColumnName="group_number" />
+          <ScalarProperty Name="student_card" ColumnName="student_card" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

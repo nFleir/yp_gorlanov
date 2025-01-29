@@ -10,21 +10,10 @@
 namespace yp_gorlanov.DB
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class users
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int user_id { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string patronymic { get; set; }
-        public Nullable<int> student_card { get; set; }
-        public Nullable<int> group_number { get; set; }
-        public int role_id { get; set; }
-    
-        public virtual groups groups { get; set; }
-        public virtual roles roles { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -12,21 +12,16 @@ namespace yp_gorlanov.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class roles
+    public partial class teachers
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public roles()
-        {
-            this.teachers = new HashSet<teachers>();
-            this.students = new HashSet<students>();
-        }
-    
+        public int teacher_id { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
+        public string name { get; set; }
+        public string surname { get; set; }
+        public string patronymic { get; set; }
         public int role_id { get; set; }
-        public string role_name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<teachers> teachers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<students> students { get; set; }
+        public virtual roles roles { get; set; }
     }
 }

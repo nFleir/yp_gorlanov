@@ -12,21 +12,14 @@ namespace yp_gorlanov.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class test
+    public partial class marks
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public test()
-        {
-            this.questions = new HashSet<questions>();
-            this.marks = new HashSet<marks>();
-        }
-    
+        public int mark_id { get; set; }
         public int test_id { get; set; }
-        public string test_name { get; set; }
+        public int student_id { get; set; }
+        public int mark { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<questions> questions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<marks> marks { get; set; }
+        public virtual students students { get; set; }
+        public virtual test test { get; set; }
     }
 }

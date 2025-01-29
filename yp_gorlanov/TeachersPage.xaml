@@ -13,7 +13,7 @@
             <TextBlock Text="проверочка" x:Name="profile_box" FontSize="24"/>
         </StackPanel>
 
-        <StackPanel x:Name="SP_TypeOfTest" Orientation="Vertical" Margin="100, 200, 100, 350" Visibility="Collapsed">
+        <StackPanel x:Name="SP_TypeOfTest" Orientation="Vertical" Margin="100, 200, 100, 350" Visibility="Visible">
             <TextBlock Text="Тип теста" Margin="0,0,0,10" FontSize="24"/>
             <TextBox x:Name="TypeOfTest_TextBox" Margin="0,0,0,10" Height="35" VerticalAlignment="Center"/>
             <Button x:Name="CreateTest_Btn" Content="Создать тест" Margin="0,0,0,10" Height="44"
@@ -24,7 +24,7 @@
 
             <!--<ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10"/>-->
 
-            <TextBlock Text="Вопрос №1" FontSize="24"/>
+            <TextBlock Name="Question_Box" Text="Вопрос" FontSize="24"/>
             <TextBox x:Name="Question1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
 
             <TextBlock Text="Ответ №1" FontSize="24"/>
@@ -42,19 +42,26 @@
             <TextBlock Text="Правильный ответ" FontSize="24"/>
             <TextBox x:Name="RightAnswer_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
 
-            <Button Content="Сохранить" Margin="0,0,0,10" Background="Wheat"/>
-            <Button Content="Добавить еще вопрос" Background="Wheat"/>
+            <Button x:Name="AddOneMoreQuestion_Btn" Content="Добавить еще вопрос" Background="Wheat" Click="AddOneMoreQuestion_Btn_Click"/>
+            <Button x:Name="SaveQuestions_Btn" Content="Сохранить" Margin="0,0,0,10" Background="Wheat" Click="SaveQuestions_Btn_Click"/>
         </StackPanel>
 
+        <StackPanel Name="SP_Reports" Visibility="Collapsed" Margin="200,100,200,100">
+            <DataGrid x:Name="MarksInfo_DG" AutoGenerateColumns="True"/>
+            <Button x:Name="UpdateRDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" Click="UpdateRDG_Btn_Click"/>
+            <Button x:Name="DeleteRDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" Click="DeleteRDG_Btn_Click"/>
+        </StackPanel>
+        
+        
         <StackPanel Orientation="Horizontal" Margin="200,636,200,10" HorizontalAlignment="Center" >
             <Button x:Name="CreateTestPage_Btn" Content="Создать тест" Width="200" Margin="10" HorizontalAlignment="Left" Background="Wheat" Click="CreateTestPage_Btn_Click"/>
-            <Button Content="Все тесты" Width="200" Margin="10" HorizontalAlignment="Left" Background="Wheat"/>
             <Button x:Name="StudentsInfoPage_Btn" Content="Сведения о студентах" Width="200" Margin="10" HorizontalAlignment="Center" Background="Wheat" Click="StudentsInfoPage_Btn_Click"/>
             <!--тут будет поиск по студенту, фильтрация оценок и тд-->
-            <Button Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right" Background="Wheat"/>
+            <Button x:Name="Reports_Btn" Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right" Background="Wheat" Click="Reports_Btn_Click"/>
         </StackPanel>
 
         <StackPanel x:Name="SP_StudentsInfo" Visibility="Collapsed" Margin="224,94,224,207" Orientation="Vertical">
+            <ComboBox Name="ChooseStudent_CBox" SelectionChanged="ChooseStudent_CBox_SelectionChanged"/>
             <DataGrid x:Name="StudentsInfo_DG" AutoGenerateColumns="True"/>
             <Button x:Name="UpdateSIDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" Click="UpdateSIDG_Btn_Click"/>
             <Button x:Name="DeleteSIDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" Click="DeleteSIDG_Btn_Click"/>

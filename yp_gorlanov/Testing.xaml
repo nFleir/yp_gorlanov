@@ -9,27 +9,26 @@
       Title="testing" Background="White">
 
     <Grid>
-        <StackPanel >
-            <TextBlock Text="Выберите тест"/>
-            <ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10"/>
-            <Button x:Name="StartTest" Height="100" />
+        <StackPanel x:Name="SP_Start" Visibility="Visible">
+            <TextBlock Text="Выберите тест" FontSize="48"/>
+            <ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10" Height="50"/>
+            <Button x:Name="StartTest_Btn" Content="Начать тест" Height="100" FontSize="48" Click="StartTest_Btn_Click" Background="Wheat"/>
             
         </StackPanel>
         
-        <StackPanel Orientation="Vertical" Margin="200,100,200,100" Visibility="Collapsed">
+        <StackPanel x:Name="SP_Test" Orientation="Vertical" Margin="200,100,200,100" Visibility="Collapsed">
             <TextBlock x:Name="TypeOfTest_TextBlock" />
 
-            <TextBlock Text="Вопрос №1" FontSize="24"/>
-            <TextBox x:Name="Question1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <TextBlock Text="Вопрос №1" FontSize="24" Margin="0,0,0,30"/>
+            <TextBlock x:Name="Question1_Box" Width="500" Height="50" HorizontalAlignment="Left" Margin="0,0,0,30"/>
 
-            <!--<TextBlock Text="Вопрос №2" FontSize="24"/>
-            <TextBox x:Name="Question2_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+            <RadioButton GroupName="Answers_RBtn" Name="Answer1_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
+            <RadioButton GroupName="Answers_RBtn" Name="Answer2_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
+            <RadioButton GroupName="Answers_RBtn" Name="Answer3_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
+            <RadioButton GroupName="Answers_RBtn" Name="Answer4_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
 
-            <TextBlock Text="Вопрос №3" FontSize="24"/>
-            <TextBox x:Name="Question3_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
-
-            <TextBlock Text="Вопрос №4" FontSize="24"/>
-            <TextBox x:Name="Question4_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>-->
+            <Button x:Name="NextQuestion_Btn" Height="50" Background="Wheat" Content="Далее" FontSize="24" Margin="0,0,0,20" Click="NextQuestion_Btn_Click"/>
+            <Button x:Name="StopTest_Btn" Height="50" Background="Wheat" Content="Завершить тест" FontSize="24" Click="StopTest_Btn_Click"/>
         </StackPanel>
         
     </Grid>
