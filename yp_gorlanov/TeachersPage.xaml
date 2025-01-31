@@ -13,59 +13,120 @@
             <TextBlock Text="проверочка" x:Name="profile_box" FontSize="24"/>
         </StackPanel>
 
-        <StackPanel x:Name="SP_TypeOfTest" Orientation="Vertical" Margin="100, 200, 100, 350" Visibility="Visible">
-            <TextBlock Text="Тип теста" Margin="0,0,0,10" FontSize="24"/>
-            <TextBox x:Name="TypeOfTest_TextBox" Margin="0,0,0,10" Height="35" VerticalAlignment="Center"/>
-            <Button x:Name="CreateTest_Btn" Content="Создать тест" Margin="0,0,0,10" Height="44"
-                    Click="CreateTest_Btn_Click" FontSize="24"/>
-        </StackPanel>
+        <Border BorderThickness="1" x:Name="SP_TypeOfTest" Visibility="Visible" BorderBrush="Gray" CornerRadius="10" Background="#F9F9F9" Padding="20" Width="500" Height="300">
+            <StackPanel  Orientation="Vertical" >
+                <TextBlock Text="Название теста" Margin="0,30,0,30" FontSize="24"/>
+                <TextBox x:Name="TypeOfTest_TextBox" Margin="0,0,0,30" Height="35" VerticalAlignment="Center"/>
+                <Button x:Name="CreateTest_Btn" Content="Создать тест" Margin="0,0,0,10" Height="44"
+                            Click="CreateTest_Btn_Click" FontSize="24"  Background="Wheat"/>
+            </StackPanel>
+        </Border>
+            
 
-        <StackPanel x:Name="SP_Test" Orientation="Vertical" Margin="200,100,200,100" Visibility="Collapsed">
+        <Border BorderThickness="1" x:Name="SP_Test" Visibility="Collapsed" BorderBrush="Gray" CornerRadius="10" Background="#F9F9F9" Padding="20" Width="500" Height="580">
+            <StackPanel  Orientation="Vertical" >
+                <TextBlock Name="Question_Box" Text="Вопрос" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+                <TextBox x:Name="Question1_Box" Width="450" Height="40" FontSize="16" Padding="5" Background="White" BorderBrush="Gray"/>
 
-            <!--<ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10"/>-->
+                <TextBlock Text="Ответ №1" FontSize="18" Margin="0,10,0,5"/>
+                <TextBox x:Name="Answer1_Box" Width="450" Height="35" FontSize="16" Padding="5" Background="White" BorderBrush="Gray"/>
 
-            <TextBlock Name="Question_Box" Text="Вопрос" FontSize="24"/>
-            <TextBox x:Name="Question1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                <TextBlock Text="Ответ №2" FontSize="18" Margin="0,10,0,5"/>
+                <TextBox x:Name="Answer2_Box" Width="450" Height="35" FontSize="16" Padding="5" Background="White" BorderBrush="Gray"/>
 
-            <TextBlock Text="Ответ №1" FontSize="24"/>
-            <TextBox x:Name="Answer1_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                <TextBlock Text="Ответ №3" FontSize="18" Margin="0,10,0,5"/>
+                <TextBox x:Name="Answer3_Box" Width="450" Height="35" FontSize="16" Padding="5" Background="White" BorderBrush="Gray"/>
 
-            <TextBlock Text="Ответ №2" FontSize="24"/>
-            <TextBox x:Name="Answer2_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                <TextBlock Text="Ответ №4" FontSize="18" Margin="0,10,0,5"/>
+                <TextBox x:Name="Answer4_Box" Width="450" Height="35" FontSize="16" Padding="5" Background="White" BorderBrush="Gray"/>
 
-            <TextBlock Text="Ответ №3" FontSize="24"/>
-            <TextBox x:Name="Answer3_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                <TextBlock Text="Правильный ответ" FontSize="18" Margin="0,10,0,5"/>
+                <TextBox x:Name="RightAnswer_Box" Width="450" Height="35" FontSize="16" Padding="5" Background="White" BorderBrush="Gray"/>
 
-            <TextBlock Text="Ответ №4" FontSize="24"/>
-            <TextBox x:Name="Answer4_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Button x:Name="AddOneMoreQuestion_Btn" Content="Добавить еще вопрос" Background="Wheat" 
+                    Width="220" Height="45" FontSize="16" Margin="5" Click="AddOneMoreQuestion_Btn_Click"/>
+                    <Button x:Name="SaveQuestions_Btn" Content="Сохранить" Background="Wheat" 
+                    Width="120" Height="45" FontSize="16" Margin="5" Click="SaveQuestions_Btn_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
 
-            <TextBlock Text="Правильный ответ" FontSize="24"/>
-            <TextBox x:Name="RightAnswer_Box" Width="444" HorizontalAlignment="Left" Margin="0,0,0,10"/>
-
-            <Button x:Name="AddOneMoreQuestion_Btn" Content="Добавить еще вопрос" Background="Wheat" Click="AddOneMoreQuestion_Btn_Click"/>
-            <Button x:Name="SaveQuestions_Btn" Content="Сохранить" Margin="0,0,0,10" Background="Wheat" Click="SaveQuestions_Btn_Click"/>
-        </StackPanel>
 
         <StackPanel Name="SP_Reports" Visibility="Collapsed" Margin="200,100,200,100">
-            <DataGrid x:Name="MarksInfo_DG" AutoGenerateColumns="True"/>
-            <Button x:Name="UpdateRDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" Click="UpdateRDG_Btn_Click"/>
-            <Button x:Name="DeleteRDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" Click="DeleteRDG_Btn_Click"/>
+            <DataGrid x:Name="MarksInfo_DG"
+          AutoGenerateColumns="False"
+          Width="500"
+          Height="300"
+          IsReadOnly="True"
+          GridLinesVisibility="All"
+          HeadersVisibility="Column"
+          AlternationCount="2">
+
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                <Setter Property="Background" Value="#f7f7f7"/>
+                            </Trigger>
+                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                <Setter Property="Background" Value="#e3e3e3"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}" Width="*" FontSize="14" FontWeight="Bold"/>
+                    <DataGridTextColumn Header="Тест" Binding="{Binding test_name}" Width="*" FontSize="14"/>
+                    <DataGridTextColumn Header="Оценка" Binding="{Binding mark}" Width="*" FontSize="14" FontWeight="Bold" Foreground="DarkBlue"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+            <!--<Button x:Name="UpdateRDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" 
+                    Click="UpdateRDG_Btn_Click" Background="Wheat"/>
+            
+            <Button x:Name="DeleteRDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" 
+                    Click="DeleteRDG_Btn_Click"  Background="Wheat"/>-->
         </StackPanel>
         
         
         <StackPanel Orientation="Horizontal" Margin="200,636,200,10" HorizontalAlignment="Center" >
-            <Button x:Name="CreateTestPage_Btn" Content="Создать тест" Width="200" Margin="10" HorizontalAlignment="Left" Background="Wheat" Click="CreateTestPage_Btn_Click"/>
-            <Button x:Name="StudentsInfoPage_Btn" Content="Сведения о студентах" Width="200" Margin="10" HorizontalAlignment="Center" Background="Wheat" Click="StudentsInfoPage_Btn_Click"/>
-            <!--тут будет поиск по студенту, фильтрация оценок и тд-->
-            <Button x:Name="Reports_Btn" Content="Отчеты" Width="200" Margin="10" HorizontalAlignment="Right" Background="Wheat" Click="Reports_Btn_Click"/>
+            <Button x:Name="CreateTestPage_Btn" Content="Создать тест" Width="200" Margin="10" 
+                    HorizontalAlignment="Left" Background="Wheat" 
+                    Click="CreateTestPage_Btn_Click"/>
+            
+            <Button x:Name="StudentsInfoPage_Btn" Content="Сведения о студентах" 
+                    Width="200" Margin="10" HorizontalAlignment="Center" Background="Wheat" 
+                    Click="StudentsInfoPage_Btn_Click"/>
+            
+            <Button x:Name="Reports_Btn" Content="Отчеты" Width="200" Margin="10" 
+                    HorizontalAlignment="Right" Background="Wheat" 
+                    Click="Reports_Btn_Click"/>
         </StackPanel>
 
         <StackPanel x:Name="SP_StudentsInfo" Visibility="Collapsed" Margin="224,94,224,207" Orientation="Vertical">
-            <ComboBox Name="ChooseStudent_CBox" SelectionChanged="ChooseStudent_CBox_SelectionChanged"/>
-            <DataGrid x:Name="StudentsInfo_DG" AutoGenerateColumns="True"/>
-            <Button x:Name="UpdateSIDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" Click="UpdateSIDG_Btn_Click"/>
-            <Button x:Name="DeleteSIDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" Click="DeleteSIDG_Btn_Click"/>
+            <ComboBox Name="ChooseStudent_CBox" SelectionChanged="ChooseStudent_CBox_SelectionChanged" Margin="0,0,0,20"/>
             
+            <DataGrid x:Name="StudentsInfo_DG" AutoGenerateColumns="False" Margin="0,0,0,20" Width="385">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding name}"/>
+                    <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}" />
+                    <DataGridTextColumn Header="Номер группы" Binding="{Binding group_number}"/>
+                    <DataGridTextColumn Header="Студенческий билет" Binding="{Binding student_card}" />
+                </DataGrid.Columns>
+                
+                
+            </DataGrid>
+
+            <Button x:Name="UpdateSIDG_Btn" Content="Обновить" Margin="200,10,200,10" Height="50" 
+                    Click="UpdateSIDG_Btn_Click"  Background="Wheat"/>
+
+            <Button x:Name="DeleteSIDG_Btn" Content="Удалить" Margin="200,10,200,10" Height="50" 
+                    Click="DeleteSIDG_Btn_Click"  Background="Wheat"/>
         </StackPanel>
     </Grid>
 </Page>

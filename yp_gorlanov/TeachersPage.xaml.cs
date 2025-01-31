@@ -61,15 +61,27 @@ namespace yp_gorlanov
             SP_Test.Visibility = Visibility.Visible;
         }
 
-        private void LoadDataGridData(int StudentId)
+        private void LoadDataGridData(int? student_id = null)
         {
-            var student = db.students.Where(u => u.student_id == CurrentUserID).ToList();
-            StudentsInfo_DG.ItemsSource = student;
+            if (student_id == null)
+            {
+                StudentsInfo_DG.ItemsSource = db.students.ToList();
+            }
+            else
+            {
+                StudentsInfo_DG.ItemsSource = db.students.Where(s => s.student_id == student_id).ToList();
+            }
+            
         }
 
         private void LoadMarksDataGridData()
         {
-            var marks = db.marks.ToList();
+            var marks = db.marks.Select(u => new
+            {
+                u.test.test_name,
+                u.students.surname, 
+                u.mark
+            }).ToList();
             MarksInfo_DG.ItemsSource = marks;
         }
 
@@ -95,15 +107,15 @@ namespace yp_gorlanov
             SP_Reports.Visibility = Visibility.Collapsed;
             SP_TypeOfTest.Visibility = Visibility.Collapsed;
             SP_StudentsInfo.Visibility = Visibility.Visible;
-            
 
+            LoadDataGridData();
         }
 
         private void ChooseStudent_CBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ChooseStudent_CBox.SelectedValue != null && int.TryParse(ChooseStudent_CBox.SelectedValue.ToString(), out int selectedId))
+            if (ChooseStudent_CBox.SelectedValue != null && int.TryParse(ChooseStudent_CBox.SelectedValue.ToString(), out int selected_id))
             {
-                LoadDataGridData(selectedId);
+                LoadDataGridData(selected_id);
             }
             else
             {
@@ -172,33 +184,7 @@ namespace yp_gorlanov
 
         private void AddOneMoreQuestion_Btn_Click(object sender, RoutedEventArgs e)
         {
-            string question_text = Question1_Box.Text;
-            string answer1 = Answer1_Box.Text;
-            string answer2 = Answer2_Box.Text;
-            string answer3 = Answer3_Box.Text;
-            string answer4 = Answer4_Box.Text;
-            string right_answer = RightAnswer_Box.Text;
-
-
-            var question = new DB.questions
-            {
-                question_text = question_text,
-                test_id = CurrentTestID
-            };
-
-            db.questions.Add(question);
-            db.SaveChanges();
-
-            var answers = new List<DB.answers>
-            {
-                new DB.answers { question_id = question.question_id, answer_text = answer1, is_correct = (answer1 == right_answer) },
-                new DB.answers { question_id = question.question_id, answer_text = answer2, is_correct = (answer2 == right_answer) },
-                new DB.answers { question_id = question.question_id, answer_text = answer3, is_correct = (answer3 == right_answer) },
-                new DB.answers { question_id = question.question_id, answer_text = answer4, is_correct = (answer4 == right_answer) }
-            };
-
-            db.answers.AddRange(answers);
-            db.SaveChanges();
+            AddQuestionToDB();
 
             Question1_Box.Clear();
 
@@ -212,34 +198,7 @@ namespace yp_gorlanov
 
         private void SaveQuestions_Btn_Click(object sender, RoutedEventArgs e)
         {
-            string question_text = Question1_Box.Text;
-            string answer1 = Answer1_Box.Text;
-            string answer2 = Answer2_Box.Text;
-            string answer3 = Answer3_Box.Text;
-            string answer4 = Answer4_Box.Text;
-            string right_answer = RightAnswer_Box.Text;
-
-            
-
-            var question = new DB.questions
-            {
-                question_text = question_text,
-                test_id = CurrentTestID
-            };
-
-            db.questions.Add(question);
-            db.SaveChanges();
-
-            var answers = new List<DB.answers>
-            {
-                new DB.answers { question_id = question.question_id, answer_text = answer1, is_correct = (answer1 == right_answer) },
-                new DB.answers { question_id = question.question_id, answer_text = answer2, is_correct = (answer2 == right_answer) },
-                new DB.answers { question_id = question.question_id, answer_text = answer3, is_correct = (answer3 == right_answer) },
-                new DB.answers { question_id = question.question_id, answer_text = answer4, is_correct = (answer4 == right_answer) }
-            };
-
-            db.answers.AddRange(answers);
-            db.SaveChanges();
+            AddQuestionToDB();
 
             MessageBox.Show("Тест успешно сохранен", "Создание теста", MessageBoxButton.OK);
             SP_Test.Visibility = Visibility.Collapsed;
@@ -284,5 +243,38 @@ namespace yp_gorlanov
                 db.SaveChanges();
             }
         }
+
+        private void AddQuestionToDB()
+        {
+            string question_text = Question1_Box.Text;
+            string answer1 = Answer1_Box.Text;
+            string answer2 = Answer2_Box.Text;
+            string answer3 = Answer3_Box.Text;
+            string answer4 = Answer4_Box.Text;
+            string right_answer = RightAnswer_Box.Text;
+
+
+
+            var question = new DB.questions
+            {
+                question_text = question_text,
+                test_id = CurrentTestID
+            };
+
+            db.questions.Add(question);
+            db.SaveChanges();
+
+            var answers = new List<DB.answers>
+            {
+                new DB.answers { question_id = question.question_id, answer_text = answer1, is_correct = (answer1 == right_answer) },
+                new DB.answers { question_id = question.question_id, answer_text = answer2, is_correct = (answer2 == right_answer) },
+                new DB.answers { question_id = question.question_id, answer_text = answer3, is_correct = (answer3 == right_answer) },
+                new DB.answers { question_id = question.question_id, answer_text = answer4, is_correct = (answer4 == right_answer) }
+            };
+
+            db.answers.AddRange(answers);
+            db.SaveChanges();
+        }
+
     }
 }

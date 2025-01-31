@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|c:\\users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\teacherspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\teacherspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\teacherspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\teacherspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\testing.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\testing.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\testing.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\testing.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\profiles\\registration.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85D17E6D-4D96-4E83-A236-411CB1381A6B}|yp_gorlanov\\yp_gorlanov.csproj|solutionrelative:yp_gorlanov\\profiles\\registration.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,65 +26,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Testing.xaml",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Testing.xaml",
-              "RelativeDocumentMoniker": "yp_gorlanov\\Testing.xaml",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Testing.xaml",
-              "RelativeToolTip": "yp_gorlanov\\Testing.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-29T09:36:25.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Testing.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Testing.xaml.cs",
-              "RelativeDocumentMoniker": "yp_gorlanov\\Testing.xaml.cs",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Testing.xaml.cs",
-              "RelativeToolTip": "yp_gorlanov\\Testing.xaml.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAjwCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T09:21:48.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Registration.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "RelativeDocumentMoniker": "yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "RelativeToolTip": "yp_gorlanov\\Profiles\\Registration.xaml.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T09:20:11.241Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TeachersPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml.cs",
-              "RelativeDocumentMoniker": "yp_gorlanov\\TeachersPage.xaml.cs",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml.cs",
-              "RelativeToolTip": "yp_gorlanov\\TeachersPage.xaml.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAADwv2IAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T09:18:23.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TeachersPage.xaml",
-              "DocumentMoniker": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml",
-              "RelativeDocumentMoniker": "yp_gorlanov\\TeachersPage.xaml",
-              "ToolTip": "C:\\Users\\nikit\\source\\repos\\yp_gorlanov\\yp_gorlanov\\TeachersPage.xaml",
-              "RelativeToolTip": "yp_gorlanov\\TeachersPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-29T09:15:22.201Z"
             }
           ]
         }

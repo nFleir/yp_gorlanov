@@ -8,8 +8,8 @@
         Title="Тестирование" Height="720" Width="1280" ResizeMode="NoResize">
     <Grid>
         <TextBlock Text="Тестирование студентов" Margin="392,143,330,463" FontSize="48" />
-        <Button Margin="411,246,350,326" x:Name="Autoriz_Btn" Content="Авторизация" FontSize="48" Click="Autoriz_Btn_Click" Background="White"/>
-        <Button Margin="411,398,350,194" x:Name="Register_Btn" Content="Регистрация" FontSize="48" Click="Register_Btn_Click" Background="White"/>
+        <Button Margin="411,246,350,326" x:Name="Autoriz_Btn" Content="Авторизация" FontSize="48" Click="Autoriz_Btn_Click" Background="Wheat"/>
+        <Button Margin="411,398,350,194" x:Name="Register_Btn" Content="Регистрация" FontSize="48" Click="Register_Btn_Click" Background="Wheat"/>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
     

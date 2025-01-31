@@ -9,8 +9,10 @@
       Title="Autorization" Background="White">
 
     <Grid>
-        <TextBlock Text="Авторизация" Margin="490,104,490,507" FontSize="48"/>
+        
         <StackPanel Orientation="Vertical" Width="707" Height="292" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,255,0,0">
+            <TextBlock Text="Авторизация" FontSize="24" FontWeight="Bold" Foreground="DarkSlateGray" 
+       HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock Text="Логин" Height="44" Width="344" FontSize="24"/>
             <TextBox Name="Login_Box"  
                  Width="350" Height="30" Margin="0,10,0,10"  />
@@ -20,7 +22,7 @@
             <PasswordBox Name="Password_Box"  Width="350" Height="30" Margin="0,0,0,10" 
                           VerticalContentAlignment="Center"/>
 
-            <Button x:Name="Enter_Btn" Content="Войти" Width="350" Background="Wheat" Height="62" Click="Enter_Btn_Click" FontSize="24"/>
+            <Button x:Name="Enter_Btn" Content="Войти" Width="350" Background="Wheat" Height="62" Click="Enter_Btn_Click" FontSize="24"  FontWeight="Bold"/>
         </StackPanel>
         <Frame x:Name="AutorizFrame" />
     </Grid>

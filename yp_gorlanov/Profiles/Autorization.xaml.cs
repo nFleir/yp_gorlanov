@@ -33,10 +33,12 @@ namespace yp_gorlanov.Profiles
         {
             string login = Login_Box.Text;
             string password = Password_Box.Password;
+            bool user_found = false;
 
             var findTeacher = db.teachers.FirstOrDefault(u => u.login == login);
             if (findTeacher != null)
             {
+                user_found = true;
                 if (findTeacher.password == password)
                 {
 
@@ -45,7 +47,7 @@ namespace yp_gorlanov.Profiles
 
                     AutorizFrame.Navigate(new TeachersPage(CurrentUserID));
 
-                    
+
                 }
                 else
                 {
@@ -54,17 +56,19 @@ namespace yp_gorlanov.Profiles
                     return;
                 }
             }
+            
 
 
             var findStudent = db.students.FirstOrDefault(u => u.login == login);
             if (findStudent != null)
             {
+                user_found = true;
                 if (findStudent.password == password)
                 {
 
                     MessageBox.Show("Вход выполнен", "Авторизация", MessageBoxButton.OK);
                     CurrentUserID = findStudent.student_id;
-                    
+
                     AutorizFrame.Navigate(new Testing(CurrentUserID));
 
                 }
@@ -76,10 +80,15 @@ namespace yp_gorlanov.Profiles
                 }
             }
 
-            MessageBox.Show($"Пользователь {login} не найден", "Авторизация", MessageBoxButton.OK);
-            Login_Box.Clear();
-            Password_Box.Clear();
-            return;
+            if (user_found == false)
+            {
+                MessageBox.Show($"Пользователь {login} не найден", "Авторизация", MessageBoxButton.OK);
+                Login_Box.Clear();
+                Password_Box.Clear();
+            }
+
         }
+
+        
     }
 }

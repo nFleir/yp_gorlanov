@@ -58,28 +58,49 @@ namespace yp_gorlanov
 
         private void StartTest_Btn_Click(object sender, RoutedEventArgs e)
         {
-            var selected_answer = GetSelectedAnswer();
-
-            if (selected_answer != null && (bool)selected_answer.Tag)
+            try
             {
-                RightAnswer++;
-            }
+                var selected_answer = GetSelectedAnswer();
 
-            CurrentTestID = (int)TypeOfTest_Box.SelectedValue;
-            SP_Start.Visibility = Visibility.Collapsed;
-            SP_Test.Visibility = Visibility.Visible;
-
-            var test = db.test.FirstOrDefault(u => u.test_id == CurrentTestID);
-
-            if (test != null)
-            {
-                CurrentQuestions = test.questions.ToList();
-                if (CurrentQuestions.Count > 0)
+                if (selected_answer != null && (bool)selected_answer.Tag)
                 {
-                    CurrentQuestionID = 0;
-                    ShowQuestion(CurrentQuestions[CurrentQuestionID]);
+                    RightAnswer++;
                 }
+                
+                if (TypeOfTest_Box.SelectedValue != null)
+                {
+                    CurrentTestID = (int)TypeOfTest_Box.SelectedValue;
+                    
+                        SP_Start.Visibility = Visibility.Collapsed;
+                        SP_Test.Visibility = Visibility.Visible;
+
+                        var test = db.test.FirstOrDefault(u => u.test_id == CurrentTestID);
+
+                        if (test != null)
+                        {
+                            CurrentQuestions = test.questions.ToList();
+                            if (CurrentQuestions.Count > 0)
+                            {
+                                CurrentQuestionID = 0;
+                                ShowQuestion(CurrentQuestions[CurrentQuestionID]);
+                            }
+                        }
+                    
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Выберите тест!", "Тест", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void NextQuestion_Btn_Click(object sender, RoutedEventArgs e)
@@ -113,7 +134,8 @@ namespace yp_gorlanov
                 if (result == MessageBoxResult.Yes)
                 {
                     SP_Test.Visibility = Visibility.Collapsed;
-                    MessageBox.Show($"Оценка - {StudentMark}");
+                    mark_box.Visibility = Visibility.Visible;
+                    mark_box.Text = $"Оценка - {StudentMark}";
                     RecordMarkToDB(StudentMark);
                 }
             }
@@ -129,7 +151,8 @@ namespace yp_gorlanov
             {
                 SP_Test.Visibility = Visibility.Collapsed;
                 StudentMark = GetStudentMark(RightAnswer, (double)CurrentQuestions.Count);
-                MessageBox.Show($"Оценка - {StudentMark}");
+                mark_box.Visibility = Visibility.Visible;
+                mark_box.Text = $"Оценка - {StudentMark}";
                 RecordMarkToDB(StudentMark);
             }
             

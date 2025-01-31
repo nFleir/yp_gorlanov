@@ -9,7 +9,9 @@
       Title="Registation" Background="White">
 
     <Grid>
-        <StackPanel Orientation="Vertical" Margin="0,40,0,60" Width="500" Height="500" >
+        <StackPanel Orientation="Vertical" Margin="0,40,0,60" Width="500" Height="520" >
+            <TextBlock Text="Регистрация" FontSize="18" FontWeight="Bold" Foreground="DarkSlateGray" 
+               HorizontalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock Text="Логин" Height="17"  Margin="0,0,0,10"/>
             <TextBox x:Name="Login_Box" Margin="0,0,0,10" />
             <TextBlock Text="Пароль" Height="17" Margin="0,0,0,10" />
@@ -32,7 +34,7 @@
             <ComboBox Name="Group_Box" Margin="0,0,0,10" Background="Wheat" BorderBrush="Wheat"/>
 
             <Button x:Name="Registration_Box" Content="Зарегистрироваться" Height="30" 
-                    Margin="0,0,0,10" Background="Wheat" Click="Registration_Box_Click"/>
+                    Margin="0,0,0,10" Background="Wheat" Click="Registration_Box_Click"  FontWeight="Bold"/>
         </StackPanel>
         <Frame Name="RegFrame" />
     </Grid>

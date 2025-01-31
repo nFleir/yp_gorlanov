@@ -9,27 +9,66 @@
       Title="testing" Background="White">
 
     <Grid>
-        <StackPanel x:Name="SP_Start" Visibility="Visible">
-            <TextBlock Text="Выберите тест" FontSize="48"/>
-            <ComboBox Name="TypeOfTest_Box" Margin="0,0,0,10" Height="50"/>
-            <Button x:Name="StartTest_Btn" Content="Начать тест" Height="100" FontSize="48" Click="StartTest_Btn_Click" Background="Wheat"/>
+        <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="10" Background="#F9F9F9" Padding="20" Width="400" Height="300">
+            <StackPanel>
+                <StackPanel x:Name="SP_Start" Visibility="Visible" HorizontalAlignment="Center">
+                    <TextBlock Text="Выберите тест" FontSize="32" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center"/>
+
+                    <ComboBox Name="TypeOfTest_Box" Height="40" FontSize="18" Padding="5" Background="White" BorderBrush="Gray"/>
+
+                    <Button x:Name="StartTest_Btn" Content="Начать тест" Height="60" FontSize="24"
+                    Click="StartTest_Btn_Click" Background="Wheat" Foreground="Black" 
+                    BorderBrush="Gray" Margin="0,20,0,0"/>          
+                </StackPanel>
+                <TextBlock x:Name="mark_box" FontSize="48" HorizontalAlignment="Center" Visibility="Collapsed"/>
+            </StackPanel>
             
-        </StackPanel>
-        
-        <StackPanel x:Name="SP_Test" Orientation="Vertical" Margin="200,100,200,100" Visibility="Collapsed">
-            <TextBlock x:Name="TypeOfTest_TextBlock" />
+            
+        </Border>
 
-            <TextBlock Text="Вопрос №1" FontSize="24" Margin="0,0,0,30"/>
-            <TextBlock x:Name="Question1_Box" Width="500" Height="50" HorizontalAlignment="Left" Margin="0,0,0,30"/>
 
-            <RadioButton GroupName="Answers_RBtn" Name="Answer1_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
-            <RadioButton GroupName="Answers_RBtn" Name="Answer2_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
-            <RadioButton GroupName="Answers_RBtn" Name="Answer3_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
-            <RadioButton GroupName="Answers_RBtn" Name="Answer4_Btn" Margin="0,0,0,20" Click="Answer1_Btn_Click"/>
+        <Border Background="White" Padding="20" CornerRadius="10" BorderBrush="LightGray" BorderThickness="2"
+        HorizontalAlignment="Center" Width="600" Height="400" Visibility="Collapsed" x:Name="SP_Test">
 
-            <Button x:Name="NextQuestion_Btn" Height="50" Background="Wheat" Content="Далее" FontSize="24" Margin="0,0,0,20" Click="NextQuestion_Btn_Click"/>
-            <Button x:Name="StopTest_Btn" Height="50" Background="Wheat" Content="Завершить тест" FontSize="24" Click="StopTest_Btn_Click"/>
-        </StackPanel>
-        
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+                <!-- Тип теста -->
+                <TextBlock x:Name="TypeOfTest_TextBlock" FontSize="18" FontWeight="Bold" Foreground="DarkSlateGray" 
+                   TextAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- Вопрос -->
+                <Border BorderThickness="1" BorderBrush="Gray" Padding="10" Background="#F9F9F9" CornerRadius="5">
+                    <StackPanel>
+                        <TextBlock Text="Вопрос" FontSize="20" FontWeight="Bold" Foreground="Black"/>
+                        <TextBlock x:Name="Question1_Box" FontSize="16" Margin="0,5,0,0"/>
+                    </StackPanel>
+                </Border>
+
+
+                <!-- Варианты ответов -->
+                <StackPanel Orientation="Vertical" Margin="0,20,0,20">
+                    <RadioButton x:Name="Answer1_Btn" GroupName="Answers_RBtn" Content="Ответ 1" FontSize="16" 
+                         Padding="5" Click="Answer1_Btn_Click"/>
+                    <RadioButton x:Name="Answer2_Btn" GroupName="Answers_RBtn" Content="Ответ 2" FontSize="16" 
+                         Padding="5" Click="Answer1_Btn_Click"/>
+                    <RadioButton x:Name="Answer3_Btn" GroupName="Answers_RBtn" Content="Ответ 3" FontSize="16" 
+                         Padding="5" Click="Answer1_Btn_Click"/>
+                    <RadioButton x:Name="Answer4_Btn" GroupName="Answers_RBtn" Content="Ответ 4" FontSize="16" 
+                         Padding="5" Click="Answer1_Btn_Click"/>
+                </StackPanel>
+
+                <!-- Кнопки управления -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <Button x:Name="NextQuestion_Btn" Width="150" Height="45" Background="Wheat" 
+                    Foreground="White" FontSize="18" FontWeight="Bold" Content="Далее"
+                    Click="NextQuestion_Btn_Click" BorderThickness="0" />
+                    <Button x:Name="StopTest_Btn" Width="150" Height="45" Background="DarkRed" 
+                    Foreground="White" FontSize="18" FontWeight="Bold" Content="Завершить"
+                    Click="StopTest_Btn_Click" BorderThickness="0" />
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Page>
